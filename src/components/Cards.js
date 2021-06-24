@@ -25,7 +25,7 @@ function Cards() {
     protocolVersion: 4,
     username: "xxkxgfeq",
     password: "Z2aLRnr4FMC-",
-    reconnectPeriod: 200,
+    reconnectPeriod: 1000,
   };
   const client = mqtt.connect("wss://soldier.cloudmqtt.com:33825", options);
   client.on("connect", function () {
@@ -62,7 +62,6 @@ function Cards() {
     }
 
     console.log(mesg);
-    client.end();
   });
   return (
     <div className="cards">
