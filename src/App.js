@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Router>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div className="preloader">Loading...</div>}>
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
