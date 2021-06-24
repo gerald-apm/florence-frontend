@@ -1,23 +1,25 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import './App.css';
-import Home from './components/pages/Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components/pages/Services';
-import Products from './components/pages/Products';
-import SignUp from './components/pages/SignUp';
+import React, { lazy, Suspense } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+const Navbar = lazy(() => import("./components/Navbar"));
+const Home = lazy(() => import("./components/pages/Home"));
+const Services = lazy(() => import("./components/pages/Services"));
+const Products = lazy(() => import("./components/pages/Products"));
+const SignUp = lazy(() => import("./components/pages/SignUp"));
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/services' component={Services} />
-          <Route path='/products' component={Products} />
-          <Route path='/sign-up' component={SignUp} />
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Navbar />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/services" component={Services} />
+            <Route path="/products" component={Products} />
+            <Route path="/sign-up" component={SignUp} />
+          </Switch>
+        </Suspense>
       </Router>
     </>
   );
