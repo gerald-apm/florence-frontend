@@ -1,8 +1,8 @@
-import React from 'react';
-import '../../App.css';
-import Cards from '../Cards';
-import HeroSection from '../HeroSection';
-import Footer from '../Footer';
+import React, { lazy } from "react";
+import "../../App.css";
+const Cards = lazy(() => import("../Cards"));
+const HeroSection = lazy(() => import("../HeroSection"));
+const Footer = lazy(() => import("../Footer"));
 
 function Home() {
   return (

@@ -1,7 +1,7 @@
 import mqtt from "mqtt";
-import React, { useState, Fragment } from "react";
-import CardItem from "./CardItem";
 import "./Cards.css";
+import React, { useState, Fragment, lazy } from "react";
+const CardItem = lazy(() => import("./CardItem"));
 
 function Cards() {
   let mesg;
