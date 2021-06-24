@@ -25,9 +25,9 @@ function Cards() {
     protocolVersion: 4,
     username: "xxkxgfeq",
     password: "Z2aLRnr4FMC-",
+    reconnectPeriod: 200,
   };
   const client = mqtt.connect("wss://soldier.cloudmqtt.com:33825", options);
-  console.log("SALAM P");
   client.on("connect", function () {
     console.log("KONEK GAN!");
     client.subscribe("florence/ultrastation", function (err) {
