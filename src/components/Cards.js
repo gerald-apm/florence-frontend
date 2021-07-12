@@ -29,7 +29,6 @@ function Cards() {
   };
   const client = mqtt.connect("wss://soldier.cloudmqtt.com:33825", options);
   client.on("connect", function () {
-    console.log("KONEK GAN!");
     client.subscribe("florence/ultrastation", function (err) {
       if (!err) {
         //client.publish('florence/ultrastation', '30');
@@ -60,8 +59,6 @@ function Cards() {
     if (topic === "florence/pompastation") {
       setPompa(mesg);
     }
-
-    console.log(mesg);
   });
   return (
     <div className="cards">
